@@ -591,10 +591,10 @@ function renderProjectsToDOM(projects) {
         projectDiv.classList.add('project');
 
         const projectTitle = document.createElement('h4');
-        projectTitle.textContent = project.title;
+        projectTitle.textContent = `Title: ${project.title}`;
 
         const projectDescription = document.createElement('p');
-        projectDescription.textContent = `Project description: ${project.description}`;
+        projectDescription.textContent = `desc:  ${project.description}`;
 
         const projectStatus = document.createElement('span');
         console.log(project);

@@ -117,7 +117,7 @@ border: none;
   border: none;
 }
 .project{
-    color: #212c45;
+    color: #1a2233;
     font-size: smaller;
     width: 150px;
     height: 200px;
@@ -134,6 +134,7 @@ border: none;
   .project p{
     height: 50px;
     font-size: smaller;
+    color:#6b6d51;
   }
 
   .project span{
@@ -145,11 +146,11 @@ border: none;
 }
 
 .running {
-    color:  rgb(106, 236, 41);
+    color:  rgb(49, 148, 0);
 }
 
 .unassigned {
-    color: rgb(0, 0, 0);
+    color: rgb(74, 60, 74);
 }
   .proj-btn{
     display: flex;
