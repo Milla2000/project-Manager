@@ -1,0 +1,84 @@
+#create a project
+POST http://localhost:4500/projects
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxZTZhM2JkLWIzNjgtNGFiOS04NjgxLWQ2ZGJkNjU5N2RlYSIsImZ1bGxfbmFtZSI6IkVsaXVkIE1hc3VuIiwiZW1haWwiOiJyeW5hcmRyb25peEBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkxMzkzNDc3LCJleHAiOjE2OTEzOTcwNzd9.mJQXGGtw63KmFNhRlQUi6oba1hlw9byFhTOQdb-z8uY
+
+{
+    "title": "Sing some more",
+    "description": "It works, don’t touch!",
+    "enddate": "2023/8/5"
+}
+
+
+
+### GET ALL PROJECTS
+GET http://localhost:4500/projects
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkNTNkMWYzLTUyNDItNDIwYi1iZjQyLTAyMzA0NmExZDhhOSIsImZ1bGxfbmFtZSI6InNpbG9tYSBzaWxvbWEiLCJlbWFpbCI6InNpbG9tYUBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkwOTkzMDIyLCJleHAiOjE2OTA5OTY2MjJ9.h_vNmdviK45XyKwAm9bwsbg1bc8IxiAS8iO1wLB_M-8
+
+
+### GET ONE PROJECT
+GET http://localhost:4500/projects/0b3a8000-3557-4ebb-bf4b-2a660c02f41d
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiMjIzZjMxLTA1ZTYtNDU3Ny05NjU5LTU1MjNjNWM4ZTI2MyIsImZ1bGxfbmFtZSI6Ik1pbGxhIEplc3NvIiwiZW1haWwiOiJtaWxsYUBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkxMDk0NDg3LCJleHAiOjE2OTEwOTgwODd9.CsVl8qiUIZNnPQJHoB4GSGHUnRwzx5UhBkxt5OgP6HI
+
+### UPDATING PROJECT
+PUT http://localhost:4500/projects/0c0765dd-6397-41b4-a001-f7bd304499c9
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiMjIzZjMxLTA1ZTYtNDU3Ny05NjU5LTU1MjNjNWM4ZTI2MyIsImZ1bGxfbmFtZSI6Ik1pbGxhIEplc3NvIiwiZW1haWwiOiJtaWxsYUBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkxMDk0NDg3LCJleHAiOjE2OTEwOTgwODd9.CsVl8qiUIZNnPQJHoB4GSGHUnRwzx5UhBkxt5OgP6HI
+
+{
+    "title": "Smile some more",
+    "description": "It works, don’t touch brother!",
+    "enddate": "2023/8/5"
+}
+
+###delete
+DELETE http://localhost:4500/projects/00e7d3cf-2031-4b35-bdc7-1fed12541c77
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkNTNkMWYzLTUyNDItNDIwYi1iZjQyLTAyMzA0NmExZDhhOSIsImZ1bGxfbmFtZSI6InNpbG9tYSBzaWxvbWEiLCJlbWFpbCI6InNpbG9tYUBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkwOTkzMDIyLCJleHAiOjE2OTA5OTY2MjJ9.h_vNmdviK45XyKwAm9bwsbg1bc8IxiAS8iO1wLB_M-8
+
+
+###assign project
+PUT http://localhost:4500/users/assign
+Content-Type: application/json
+
+{
+    "project_id": "53543c52-4e36-4ec9-ac80-7c70a9c9cfbe",
+    "user_id": "a5907d51-f0d0-425e-b601-872d48d53a04"    
+}
+
+
+###complete project
+POST http://localhost:4500/users/complete
+Content-Type: application/json
+
+{
+    "project_id": "0b3a8000-3557-4ebb-bf4b-2a660c02f41d",
+    "user_id": "2b82c3e0-3e5e-43c0-9962-c48d087b2dc0"    
+}
+
+### register
+POST  http://localhost:4500/users/register
+Content-Type: application/json
+
+{
+    "full_name": "John Jesso",
+    "email":"johnJesso@gmail.com",
+    "password":"12345678"
+}
+
+
+### login
+POST  http://localhost:4500/users/login
+Content-Type: application/json
+
+{
+    "email":"rynardronix@gmail.com",
+    "password":"12345678"
+}
+
+###
+GET http://localhost:4500/users/check
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJiODJjM2UwLTNlNWUtNDNjMC05OTYyLWM0OGQwODdiMmRjMCIsImZ1bGxfbmFtZSI6IkVsaXVkIE1hc3VuIiwiZW1haWwiOiJyeW5hcmRyb25peEBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOiIwYjNhODAwMC0zNTU3LTRlYmItYmY0Yi0yYTY2MGMwMmY0MWQiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTM1NDMyMiwiZXhwIjoxNjkxMzU3OTIyfQ.aJJrzpp1qB6g0ARN9-YoJsphSEltK3FmB_Gn_WAU-j0
+
+###  
+GET http://localhost:4500/users/allusers
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxZTZhM2JkLWIzNjgtNGFiOS04NjgxLWQ2ZGJkNjU5N2RlYSIsImZ1bGxfbmFtZSI6IkVsaXVkIE1hc3VuIiwiZW1haWwiOiJyeW5hcmRyb25peEBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkxMzkzNDc3LCJleHAiOjE2OTEzOTcwNzd9.mJQXGGtw63KmFNhRlQUi6oba1hlw9byFhTOQdb-z8uY

@@ -1,0 +1,4 @@
+CREATE OR ALTER PROCEDURE fetchAllUsersProc
+AS
+BEGIN SELECT * FROM usersTable
+END
