@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/users.css">
+    <title>User</title>
+</head>
+<body>
+    <div class="app">
+        <div class="navbar">
+            <img class="userimg" src="images/avatar-2092113_640.png" alt="">
+            <span class="user-name">User</span>
+            <div class="nav-btn">
+                <div class="project-btns">
+                    <a href="/userpage.html"><button>Dashboard</button></a>
+                    <!-- <a href="/user-projects.html"><button>Past Projects</button></a> -->
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-nav">
+                <span>Current Project</span>
+            </div>
+            <div class="content-data">
+                <div class="project-assigned">
+                    <div class="proj-tittle">
+                        <h4 id="project-title">Project Title</h4>
+                    </div>
+                    <div class="proj-des">
+                        <p id="proj-desc">project description</p>
+                    </div>
+                    <div class="time-div">
+                        <p id="startdate">startdate</p>
+                        <p id="enddate">enddate</p>
+                    </div>
+                    <span class="status">status: Running</span>
+                    <button id="completeButton">complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+</html>

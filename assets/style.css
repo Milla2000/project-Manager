@@ -1,0 +1,76 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0cef2;
+    color: white;
+  }
+  .app {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 700px;
+    background-color: #8f8aec ;
+    justify-content: center;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 6px 10px 5px #818187;
+  }
+  .navbar{
+    height: 500px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: #212c45;
+    position:static;
+    border-radius: 10px 0px 5px 10px;
+  }
+
+  .userimg{
+    border: solid black  ;
+    width: 120px;
+    border-radius: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+.user-name{
+   padding: 10px;
+  }
+
+
+.navbar button{
+  width: 120px;
+  height:25px;
+  border-radius: 5px;
+  border: none;
+  
+}
+  .nav-btn{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  .project-btns{
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    gap: 10px;
+    
+  }
+
+
+  
+  

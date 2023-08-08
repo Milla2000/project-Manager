@@ -1,0 +1,94 @@
+.content-nav{
+  display: flex;
+  padding: 5px;
+  border-radius: 0px 10px 0px 0px;
+  height: 30px;
+  background-color: #eaeafb;
+  color: #212c45;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+
+.content-data{
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 550px;
+}
+.project{
+    color: #212c45;
+    width: 150px;
+    height: 200px;
+    background-color:#d0cef2;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+  }
+  .time-div p{
+    background-color: #a9a5ed;
+    width: 120px;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .status{
+    background-color: #a9a5ed;
+    width: 120px;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .project-assigned button{
+      background-color: #a9a5ed;
+      width: 120px;
+      border-radius: 5px;
+      padding: 2px;
+      border: none;
+  }
+  
+.project-assigned{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 350px;
+    background-color: #f0f0f5;
+    gap: 20px;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 20px;
+  
+  }
+  .proj-tittle{
+    background-color:#a9a5ed;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .proj-des{
+    background-color:#a9a5ed;
+    width: 300px;
+    height: 800px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .time-div{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .project-assigned button{
+    width: 100px;
+  }
+
+  #startdate, #enddate{
+    font-size: small;
+  }
