@@ -388,7 +388,7 @@ if(window.location.pathname == '/adminpage.html'){
         
         const submitModalButton = document.querySelector('.modal-submit');
 
-        if (submitModalButton) { // Check if the element was found
+        if (submitModalButton) { 
             submitModalButton.addEventListener('click', async (event) => {
                 event.preventDefault();
 
@@ -414,16 +414,26 @@ if(window.location.pathname == '/adminpage.html'){
 
                     if (response.ok) {
                         const responseData = await response.json();
-                        console.log('Project created:', responseData);
-                        window.location.href = '/adminpage.html'
-                        // Handle the response data as needed
+                        const creatednotification = document.querySelector('#createdSuccessfully')
+                        creatednotification.style.display = 'block';
+                        const modal = document.getElementById('modal');
+                        modal.style.display = 'none';
+                        setTimeout(function() {
+                            creatednotification.style.display = 'none';
+                            
+                            console.log('Project created:', responseData);
+                            
+                            window.location.href = '/adminpage.html'
+                        }, 3000);
+                        
+                       
                     } else {
                         console.error('Failed to create project');
-                        // Handle error scenario here
+                        
                     }
                 } catch (error) {
                     console.error('An error occurred:', error);
-                    // Handle error scenario here
+                    
                 }
             });
         } else {
@@ -454,11 +464,10 @@ window.addEventListener('click', (event) => {
   }
 });
     
-// Assuming you have a <div> element with the id "content" to hold the project data
+
 const contentDiv = document.querySelector('.content-data')
 console.log("inside admin dashboard");
 
-// Send GET request and render projects
 async function renderProjects() {
     const token = localStorage.getItem('token');
     
@@ -486,11 +495,11 @@ async function renderProjects() {
           
         } else {
             console.error('Failed to fetch projects');
-            // Handle error scenario here
+            
         }
     } catch (error) {
         console.error('Error fetching projects:', error);
-        // Handle error scenario here
+        
     }
 }
 
@@ -503,7 +512,7 @@ const allButton = document.querySelector('#all-projects');
 
 allButton.addEventListener('click', () => {
     const contentDiv = document.querySelector('.content-data');
-    contentDiv.innerHTML = ''; // Clear the content before rendering
+    contentDiv.innerHTML = ''; 
     const allProjects=[]
 
     console.log('Running button clicked');
@@ -521,7 +530,7 @@ allButton.addEventListener('click', () => {
 
 runningButton.addEventListener('click', () => {
     const contentDiv = document.querySelector('.content-data');
-    contentDiv.innerHTML = ''; // Clear the content before rendering
+    contentDiv.innerHTML = ''; 
     const runningProjects=[]
 
     console.log('Running button clicked');
@@ -529,12 +538,12 @@ runningButton.addEventListener('click', () => {
 
     globalProjects.forEach((innerProjectsArray) => {
         innerProjectsArray.forEach((project) => {
-            // console.log(project.assignedStatus);
+            
 
             if (project.assignedStatus) {
                 console.log('inside assigned');
                 console.log(project);
-                runningProjects.push(project); // Add the project to the runningProjects array
+                runningProjects.push(project);
             }
         });
     });
