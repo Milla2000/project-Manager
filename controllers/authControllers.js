@@ -6,6 +6,7 @@ const { createUsersTable } = require('../Database/Tables/createTables');
 const { sqlConfig } = require('../config/config');
 const dotenv = require('dotenv');
 const { loginSchema, registerSchema } = require('../validators/validators');
+const { new_user } = require('../EmailService/newUser');
 dotenv.config()
 
 
@@ -43,6 +44,7 @@ const registerUsers = async (req,res) =>{
         console.log(result);
 
         if(result.rowsAffected == 1){
+            new_user(id)
             return res.status(200).json({ message: "User registered successfully"})
         }else{
             return res.status(200).json({ message: "Registration failed"})
