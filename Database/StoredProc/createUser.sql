@@ -7,7 +7,7 @@ END
 SELECT * FROM usersTable;
 
 
-
+-- create superuser
 INSERT INTO usersTable(id, full_name, email, password, role)
 VALUES (
   'ed53d1f3-5242-420b-bf42-023046a1d8a9',

@@ -27,7 +27,9 @@ const completeProject = async(req,res)=>{
             // }
     
         }
-        projectCompleteNotifier()
+        console.log("my user id is");
+        console.log(user_id);
+        projectCompleteNotifier(user_id)
 
 
         return res.json({

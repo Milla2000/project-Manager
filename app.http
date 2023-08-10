@@ -52,7 +52,7 @@ Content-Type: application/json
 
 {
     "project_id": "0b3a8000-3557-4ebb-bf4b-2a660c02f41d",
-    "user_id": "2b82c3e0-3e5e-43c0-9962-c48d087b2dc0"    
+    "user_id": "a5907d51-f0d0-425e-b601-872d48d53a04"    
 }
 
 ### register
@@ -71,14 +71,14 @@ POST  http://localhost:4500/users/login
 Content-Type: application/json
 
 {
-    "email":"rynardronix@gmail.com",
+    "email":"ignit3graphics@gmail.com",
     "password":"12345678"
 }
 
 ###
 GET http://localhost:4500/users/check
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJiODJjM2UwLTNlNWUtNDNjMC05OTYyLWM0OGQwODdiMmRjMCIsImZ1bGxfbmFtZSI6IkVsaXVkIE1hc3VuIiwiZW1haWwiOiJyeW5hcmRyb25peEBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOiIwYjNhODAwMC0zNTU3LTRlYmItYmY0Yi0yYTY2MGMwMmY0MWQiLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTM1NDMyMiwiZXhwIjoxNjkxMzU3OTIyfQ.aJJrzpp1qB6g0ARN9-YoJsphSEltK3FmB_Gn_WAU-j0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkNTNkMWYzLTUyNDItNDIwYi1iZjQyLTAyMzA0NmExZDhhOSIsImZ1bGxfbmFtZSI6Ik1pbGxhIFdhY2hpcmEgU2lsb21hIiwiZW1haWwiOiJpZ25pdDNncmFwaGljc0BnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY2MDM0OCwiZXhwIjoxNjkxNjYzOTQ4fQ.LXJkVJhFNpGESbG79zli1_uPcUGLRTzVLzbZ53H-cEg
 
 ###  
 GET http://localhost:4500/users/allusers
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxZTZhM2JkLWIzNjgtNGFiOS04NjgxLWQ2ZGJkNjU5N2RlYSIsImZ1bGxfbmFtZSI6IkVsaXVkIE1hc3VuIiwiZW1haWwiOiJyeW5hcmRyb25peEBnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkxMzkzNDc3LCJleHAiOjE2OTEzOTcwNzd9.mJQXGGtw63KmFNhRlQUi6oba1hlw9byFhTOQdb-z8uY
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkNTNkMWYzLTUyNDItNDIwYi1iZjQyLTAyMzA0NmExZDhhOSIsImZ1bGxfbmFtZSI6Ik1pbGxhIFdhY2hpcmEgU2lsb21hIiwiZW1haWwiOiJpZ25pdDNncmFwaGljc0BnbWFpbC5jb20iLCJhc3NpZ25lZFByb2plY3QiOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTY2MDM0OCwiZXhwIjoxNjkxNjYzOTQ4fQ.LXJkVJhFNpGESbG79zli1_uPcUGLRTzVLzbZ53H-cEg

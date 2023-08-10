@@ -23,4 +23,4 @@ END
 --     WHERE id = @userId;
 -- END
 
-UPDATE projectsTable SET assignedStatus = TRUE WHERE id = @project_id;
+-- UPDATE projectsTable SET assignedStatus = TRUE WHERE id = @project_id;
