@@ -31,7 +31,17 @@ if(window.location.pathname == '/register.html'){
     registration_form.addEventListener('submit', (e)=>{
         e.preventDefault();
 
+        if(txtfullname.value == '' || txtemail.value == '' || txtpassword.value == '' || txtpassword2.value == ''  ){
+            reg_notification.textContent = "fill all fields"
+            setTimeout(function() {
+                reg_notification.textContent = ""
+            }, 3000);
+            return
+        }
+
         console.log(txtpassword.value, txtpassword2.value );
+
+
         
         
         if(txtpassword.value !== txtpassword2.value){
@@ -90,7 +100,7 @@ if(window.location.pathname == '/login.html'){
         e.preventDefault()
 
 
-        if(txtloginemail.value == '' && txtloginpwd.value == ''){
+        if(txtloginemail.value == '' || txtloginpwd.value == ''){
             notification.textContent = "fill all fields"
             setTimeout(function() {
                 notification.textContent = ""
@@ -157,13 +167,13 @@ if(window.location.pathname == '/login.html'){
                         // loginMsgs.innerHTML = data?.message 
                         // token = data?.token
     
-                         // Get user role from the response
+                        
                         const userRole = data?.info?.role;
     
                         console.log(userRole);
                         
     
-                        // Redirect based on user role
+                       
                         if (userRole === 'user') {
                             window.location.href = '/userpage.html'; // Redirect for regular users
                         } else if (userRole === 'admin') {
@@ -197,7 +207,6 @@ if(window.location.pathname == '/admin-assign.html'){
         window.location.href = '/login.html'
     }
 
-    // Send GET request and render projects
     async function renderProjects() {
     const token = localStorage.getItem('token');
     logoutUser()
@@ -248,7 +257,7 @@ if(window.location.pathname == '/admin-assign.html'){
                 .then(data => {
                     const usersListContainer = document.querySelector('.users-list');
                     
-                    // Loop through the user data and generate HTML for each user
+                   
                     data.users.forEach(user => {
                         const userDiv = document.createElement('div');
                         userDiv.className = 'user';
@@ -259,7 +268,6 @@ if(window.location.pathname == '/admin-assign.html'){
                         
                         userDiv.appendChild(userNameSpan);
                         
-                        // Check if the user is assigned to a project
                         if (user.assignedProject) {
                             const assignedSpan = document.createElement('span');
                             assignedSpan.textContent = 'Assigned';
@@ -268,8 +276,8 @@ if(window.location.pathname == '/admin-assign.html'){
                             const checkbox = document.createElement('input');
                             checkbox.type = 'radio';
                             checkbox.name = 'assignUser';
-                            checkbox.value = user.id; // Store the user's ID as the checkbox value
-                            checkbox.dataset.userId = user.id; // Store the user's ID as a data attribute
+                            checkbox.value = user.id; 
+                            checkbox.dataset.userId = user.id; 
                             
                             // const label = document.createElement('label');
                             // label.textContent = 'Not Assigned';
@@ -290,13 +298,13 @@ if(window.location.pathname == '/admin-assign.html'){
             const assignButton = document.querySelector('#assign-btn')
             assignButton.addEventListener('click', async () => {
 
-                            // Initialize an array to store selected user IDs
+                            
                 let selectedUserIds = [];
 
-                // Get all checkboxes that are checked
+             
                 const checkedCheckboxes = document.querySelectorAll('input[name="assignUser"]:checked');
 
-                // Loop through the checked checkboxes and gather the selected user IDs
+                
                 checkedCheckboxes.forEach(checkbox => {
                     selectedUserIds.push(checkbox.dataset.userId);
                 });
@@ -304,12 +312,11 @@ if(window.location.pathname == '/admin-assign.html'){
                 console.log(selectedUserIds);
 
                 selectedUserIds.forEach(async(useridz)=>{
-                     // Get the selected user ID and project ID
-                    //  let selectedUserId = ''; // Get the selected user's ID from the rendered user elements
+                     
                     let selectuser = document.querySelector('#select-users'); 
-                    let selectedProjectId = selectuser.value; // Get the selected project's ID from the dropdown
+                    let selectedProjectId = selectuser.value; 
                      console.log(selectedProjectId);
-                     // Construct the payload for assignment
+                     
                      const assignmentPayload = {
                          user_id: useridz,
                          project_id: selectedProjectId
@@ -326,14 +333,14 @@ if(window.location.pathname == '/admin-assign.html'){
                          
                          if (response.ok) {
                              console.log('Project assigned successfully.');
-                             // You can perform additional actions here after successful assignment
+                             
                          } else {
                              console.error('Project assignment failed.');
-                             // Handle error cases here
+                            
                          }
                      } catch (error) {
                          console.error('An error occurred:', error);
-                         // Handle errors related to the fetch request
+                         
                      }
                  });
                  
@@ -395,6 +402,17 @@ if(window.location.pathname == '/adminpage.html'){
                 const modalTitle = document.getElementById('modal-title').value;
                 const modalDescription = document.getElementById('modal-description').value;
                 const modalEnddate = document.getElementById('modal-enddate').value;
+
+
+                let currentDate = new Date().toJSON().slice(0, 10);
+                let deadline = new Date(modalEnddate).toJSON().slice(0, 10);
+
+                if (deadline <= currentDate) {
+                    alert('cannot create objects deadlined before today')
+                    return
+                } 
+
+
 
                 const token = localStorage.getItem('token');
 
@@ -599,6 +617,8 @@ function renderProjectsToDOM(projects) {
         const projectStatus = document.createElement('span');
         console.log(project);
 
+        // const strtdate = project.startdate
+
         if(project.assignedStatus){
             console.log(project.completionStatus);
             if (project.completionStatus!==null) {
@@ -620,7 +640,7 @@ function renderProjectsToDOM(projects) {
         if(!project.startdate){
             // console.log('is nulllllll');
             
-            // projectStartDate.textContent = `Start Date: unassigned`;
+            projectStartDate.textContent = `Start Date: not yet assigned`;
         }else{
             
             projectStartDate.textContent = `Start Date: ${project.startdate}`;

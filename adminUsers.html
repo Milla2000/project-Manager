@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="mobile-nav">
+            <div class="mobile-profile">
+                <img src="images/icons8-user-64.png" alt="">
+                <h4>User name</h4>
+            </div>
+            <div class="humburger" id="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                    <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
+                </svg>
+            </div>
+            <div class="menu-options" id="menuOptions">
+                <div class="bar"><a href="/adminpage.html">dashboard</a></div>
+                <div class="bar"><a href="/adminUsers.html">users</a></div>
+                <div class="bar">logout</div>
+            </div>
+        </div>
+        
+                
+
+
+        <div class="nav">
+            <div class="profile-section">
+                <img class="user-image" src="images/avatar-2092113_640.png" alt="">
+                <h3 class="user-name" style="color: white;">username</h3>
+                <!-- <h6 class="user-email" style="color: white;">useremail</h6> -->
+            </div>
+            <div class="nav-btn">
+                <div class="project-btns">
+                    <a href="/adminpage.html"><button><i class="fas fa-th fa-lg"></i>
+                        Dashboard</button></a>
+                    <a href="/adminUsers.html"><button><i class="fas fa-user"></i>
+                        Users</button></a>
+                </div>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i>
+                    Logout</button>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="top-nav">
+                <label for="">Assign Project</label>
+                <select  id="select-users">
+                    <option value="" disabled selected>Select a project...</option>
+                    
+                    
+                </select>
+                <!-- <button> select users to assign</button> -->
+                <button id="assign-btn">Assign </button>
+
+            </div>
+            <div class="projects-container">
+                    <!-- <div class="user">
+                        <h4> Milla Jeso</h4>
+                        <h5>Assigned</h5>
+                    </div> -->
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const menuOptions = document.getElementById("menuOptions");
+
+    hamburger.addEventListener("click", function () {
+        menuOptions.classList.toggle("show-menu");
+    });
+});
+
+    </script>
+</body>
+</html>

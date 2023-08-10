@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/admin.css">
+    <!-- <link rel="stylesheet" href="/assets/style.css"> -->
+    <title>Admin</title>
+</head>
+<body>
+    <div class="app">
+        <div class="navbar">
+            <img class="userimg" src="images/avatar-2092113_640.png" alt="">
+            <span class="user-name">Admin</span>
+            <div class="nav-btn">
+                <div class="project-btns">
+                    <a href="/adminpage.html"><button>Dashboard</button></a>
+                    <a href="/admin-assign.html"><button>Users</button></a>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <div class="content">
+            <p id="createdSuccessfully" style="display: none; margin-left:170px ;">Project created successfully</p>
+            <div class="content-nav">
+                <button class="open-modal-btn" id="openModal"> Create Project</button>
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                      <span class="close-modal-btn" id="closeModal">&times;</span>
+                      <form action="">
+                          <h2 id="modal-heading">Create Project</h2>
+                          <label for="">Project Title</label>
+                          <input type="text" class="input" id="modal-title" placeholder="Enter Project Title">
+                          <label for="">Project Description</label>
+                          <input type="text" class="description-input" id="modal-description" placeholder="Project description"> 
+                          <label for="">Set Enddate</label>
+                          <input type="date" class="input" id="modal-enddate" placeholder="enddate">
+                          <input type="submit" class="modal-submit">
+                      </form>
+                    </div>
+                  </div>
+                  <button id="all-projects">All Projects</button>
+                <button id="running-projects">Running Projects </button>
+                <button id="completed-projects">Completed Projects</button>
+                
+            </div>
+            <div class="content-data">
+                <!-- <div class="project">
+                    <h4>Project Title</h4>
+                    <p>project description: Lorem 
+                        ipsum dolor sit amet.</p>
+                    <span>status</span>
+                    <span>startdate</span>
+                    <span>enddate</span>
+                    <div class="proj-btn">
+                        <button>delete</button>
+                        <button>edit</button>
+                    </div>
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+</html>
