@@ -21,11 +21,19 @@ const registerUsers = async (req,res) =>{
         
         const {full_name,email,password} = req.body
 
+         if (!full_name || !email || !password) {
+           return res.status(400).json({
+             error: "Please input all values",
+           });
+         }
+
         const {error} = registerSchema.validate(req.body)
-        if(error){
-            return res.status(422).json(error.details)
+
+        if (error) {
+          return res.status(422).json(error.details);
         }
 
+    
         console.log(full_name);
 
         const hashedPwd = await bcrypt.hash(password, 5);
@@ -43,15 +51,14 @@ const registerUsers = async (req,res) =>{
 
         console.log(result);
 
-        if(result.rowsAffected == 1){
-            new_user(id)
-            return res.status(200).json({ message: "User registered successfully"})
-        }else{
-            return res.status(200).json({ message: "Registration failed"})
+        if (result.rowsAffected[0] == 1) {
+          new_user(id);
+          return res
+            .status(200)
+            .json({ message: "User registered successfully" });
+        } else {
+          return res.status(400).json({ message: "Registration failed" });
         }
-
-
-
 
     } catch (error) {
         return res.json({Error:error.message})
@@ -62,6 +69,12 @@ const registerUsers = async (req,res) =>{
 const userLogin = async(req,res)=>{
     try {
         const{email,password} = req.body
+
+        if (!email || !password) {
+          return res.status(400).json({
+            error: "Please input all values",
+          });
+        }
 
         const {error} = loginSchema.validate(req.body)
         if(error){
@@ -91,15 +104,16 @@ const userLogin = async(req,res)=>{
                 })
             }else{
                 return res.status(400).json({
-                    message: 'Invalid login credentials'
+                    message: 'Incorrect password'
                 })
             }
         }else{
-            return res.status(400).json({message: "Email does not exist"})
+            
+            return res.status(404).json({ message: "Email does not exist" });
         }
 
     } catch (error) {
-        return res.json({Error:error.message})
+        return res.json({ message: "Invalid login credentials" });
     }
 }
 
